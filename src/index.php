@@ -16,7 +16,7 @@
     $var = 'See?';
     echo 'Hello there, I am '. $temp. ' and I know how to use variables! '. $var.PHP_EOL;
     $rate = 15;
-    $hours = 4;
+    $hours = $_GET['hours'];
     if($hours > 40){
         $total = $hours * $rate * 1.5;
     }
