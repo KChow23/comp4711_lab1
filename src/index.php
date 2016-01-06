@@ -41,7 +41,7 @@
  */
 
 function winner($token, $position) {
-    $won = false;
+    /*
     if( ($position[0] == $token) && ($position[1] == $token) && ($position[2] == $token) ){
         $won = true;
     }
@@ -65,7 +65,33 @@ function winner($token, $position) {
     }
     elseif( ($position[2] == $token) && ($position[4] == $token) && ($position[6] == $token) ){
         $won = true;
+    }*/
+    /*
+    for($row=0; $row < 3; $row++){
+        if( ($position[3*$row] == $token) && ($position[3*$row+1] == $token) && ($position[3*$row+2] == $token)){
+            $won = true;
+
+        }
+    }*/
+    $won = false;
+    for($row=0; $row<3; $row++){
+        echo 'ROW VALUE: '. $row.PHP_EOL;
+        $won = true;
+        for($col=0; $col<3; $col++){
+            echo "COL VALUE: " . (3*$row+$col).PHP_EOL;
+            echo "INDEX: ". (3*$row+$col);
+            if($position[3*$row+$col] != $token){
+                echo "THIS DOESN'T WORK!";
+                $won = false;
+                break;
+            }
+        }
+        if($won){
+            return $won;
+        }
+
     }
     return $won;
+
 }
 ?>
