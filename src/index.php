@@ -6,6 +6,7 @@
     </head>
     <body>
     <?php
+    require 'Game.php';
     /**
      * Created by PhpStorm.
      * User: Kevin
@@ -16,8 +17,8 @@
         echo "No board found";
     }
     else{
-        $squares = str_split($_GET['board']);
-        $game = new Game($squares);
+        $game = new Game($_GET['board']);
+        $game->display();
         if($game->winner('x')){
             echo 'You win. Lucky guesses';
         }
